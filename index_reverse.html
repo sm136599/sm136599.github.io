@@ -201,41 +201,41 @@
 
       .chart-block {
         flex: 1;
-        min-width: 360px;
+        min-width: 460px;
         background-color: #fff;
         border-radius: 8px;
-        padding: 20px;
+        padding: 12px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
       .chart-description p {
         margin: 0;
-        padding-bottom: 10px;
+        padding-bottom: 6px;
         color: #6B7280;
         font-size: 9px;
         line-height: 22px;
       }
       .table-block {
         flex: 2;
-        min-width: 360px;
+        min-width: 460px;
         background-color: #fff;
         border-radius: 8px;
-        padding: 20px;
+        padding: 12px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
       .table-description p {
         margin: 0;
-        padding-bottom: 10px;
+        padding-bottom: 6px;
         color: #6B7280;
         font-size: 8px;
       }
       th, td {
-        padding: 10px 4px;
+        padding: 6px 3px;
         text-align: center;
         font-size: 8px;
       }
       .table-tabs {
         display: flex;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
         font-size: 7px;
       }
       .table-content {
@@ -247,7 +247,11 @@
         font-size: 6px;
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 6px;
+      }
+
+      .annotation {
+        font-size: 7px;
       }
     }
   </style>
@@ -921,7 +925,13 @@
       let scale = 1;
 
       
-       if (window.innerWidth <= 1024) {
+      if (window.innerWidth <= 640) {
+        scale = 0.6;
+      }
+      else if (window.innerWidth <= 768) {
+        scale = 0.8;
+      }
+      else if (window.innerWidth <= 1024) {
         scale = 0.9;
       }
 
