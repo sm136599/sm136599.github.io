@@ -861,22 +861,38 @@
       bubbleChart.render();
     });
 
-    function setViewport() {
+    // function setViewport() {
 
+    //   let scale = 1;
+    //   if (window.innerWidth <= 980) {
+    //     scale = 0.4;
+    //   }
+    //   else if (window.innerWidth <= 1024) {
+    //     scale = 0.6;
+    //   }
+    //   let meta = document.createElement('meta');
+    //   meta.name = "viewport";
+    //   meta.content = `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`;
+    //   document.head.appendChild(meta);
+    // }
+	  // setViewport();
+    function adjustScale() {
       let scale = 1;
-      if (window.innerWidth <= 980) {
-        scale = 0.4;
-      }
-      else if (window.innerWidth <= 1024) {
+
+      if (window.innerWidth <= 640) {
         scale = 0.6;
       }
-      let meta = document.createElement('meta');
-      meta.name = "viewport";
-      meta.content = `width=device-width, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`;
-      document.head.appendChild(meta);
-    }
-	  setViewport();
+      else if (window.innerWidth <= 768) {
+        scale = 0.8;
+      }
+      else if (window.innerWidth <= 1024) {
+        scale = 0.9;
+      }
 
+      document.querySelector('body').style.zoom = scale;
+    }
+    adjustScale();
+    window.addEventListener('resize', adjustScale);
     // 기본 화면 크기 80%로 설정
     // document.body.style.zoom = "80%";
   </script>
